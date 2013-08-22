@@ -20,6 +20,7 @@
 -(NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section;
 -(NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UIView *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section;
 @end
 
 %hook minecraftpeViewController
@@ -72,6 +73,10 @@
 	@"Aktivera";
     }
   return sectionHeader;
+}
+%new
+- (UIView *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return @"Created by: @s1ris";
 }
 %new
 -(NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section {
